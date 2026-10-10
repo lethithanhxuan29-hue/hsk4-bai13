@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)file:///C:/Users/Administrator/Downloads/hsk4_bai13_baikho_ontap.html -->
+<html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ôn Tập Bài Khóa Bài 13 – HSK 4</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --p:#7C3AED;--p-l:#F5F3FF;--p-d:#4C1D95;
+  --g:#059669;--g-l:#ECFDF5;--g-d:#064E3B;
+  --r:#DC2626;--r-l:#FEF2F2;--r-d:#7F1D1D;
+  --a:#D97706;--a-l:#FFFBEB;--a-d:#78350F;
+  --b:#2563EB;--b-l:#EFF6FF;--b-d:#1E3A8A;
+  --pk:#BE185D;--pk-l:#FDF2F8;--pk-d:#831843;
+  --t:#0D9488;--t-l:#F0FDFA;--t-d:#134E4A;
+  --or:#EA580C;--or-l:#FFF7ED;--or-d:#7C2D12;
+  --bg:#F8FAFC;--card:#FFFFFF;
+  --border:#E2E8F0;--border2:#CBD5E1;
+  --text:#0F172A;--sub:#475569;--muted:#94A3B8;
+  --r-card:16px;--r-sm:10px;
+  --sh:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.06);
+  --sh-lg:0 4px 6px rgba(0,0,0,.04),0 10px 40px rgba(0,0,0,.09);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:16px}
+.app{max-width:900px;margin:0 auto}
+
+/* TOPBAR */
+.topbar{background:#fff;border-radius:var(--r-card);padding:16px 22px;margin-bottom:14px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;box-shadow:var(--sh);border:1px solid var(--border)}
+.tb-left{flex:1;min-width:180px}
+.tb-left h1{font-size:16px;font-weight:800;color:var(--text);line-height:1.35}
+.tb-left p{font-size:12px;color:var(--sub);margin-top:2px}
+.badge{background:var(--p-l);color:var(--p-d);font-size:11px;font-weight:700;padding:2px 9px;border-radius:99px;border:1px solid #DDD6FE}
+.timer-box{display:flex;align-items:center;gap:8px;background:var(--bg);border:1.5px solid var(--border2);border-radius:12px;padding:8px 16px}
+.timer-val{font-size:22px;font-weight:900;color:var(--text);font-variant-numeric:tabular-nums;letter-spacing:1px}
+.timer-box.urgent{border-color:var(--r);background:var(--r-l)}
+.timer-box.urgent .timer-val{color:var(--r);animation:blink .9s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* PROGRESS */
+.prog-bar{background:#fff;border-radius:var(--r-sm);padding:10px 18px;margin-bottom:14px;box-shadow:var(--sh);border:1px solid var(--border)}
+.prog-top{display:flex;justify-content:space-between;margin-bottom:7px}
+.prog-top span{font-size:12px;font-weight:600;color:var(--sub)}
+.prog-track{height:8px;background:var(--border);border-radius:99px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--p),var(--pk));border-radius:99px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+
+/* SCREENS */
+#s-start,#s-text,#s-vocab,#s-quiz,#s-result{display:none}
+#s-start.on,#s-text.on,#s-vocab.on,#s-quiz.on,#s-result.on{display:block}
+
+/* START */
+.start-card{background:#fff;border-radius:var(--r-card);padding:38px 28px;box-shadow:var(--sh-lg);text-align:center;border:1px solid var(--border)}
+.s-emo{font-size:58px;display:block;margin-bottom:14px;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.s-h{font-size:22px;font-weight:900;color:var(--text);margin-bottom:8px}
+.s-sub{font-size:14px;color:var(--sub);line-height:1.75;margin-bottom:22px}
+.s-chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:26px}
+.chip{font-size:12px;font-weight:600;padding:5px 13px;border-radius:99px;border:1px solid}
+.c-p{background:var(--p-l);color:var(--p-d);border-color:#DDD6FE}
+.c-g{background:var(--g-l);color:var(--g-d);border-color:#A7F3D0}
+.c-b{background:var(--b-l);color:var(--b-d);border-color:#BFDBFE}
+.c-a{background:var(--a-l);color:var(--a-d);border-color:#FDE68A}
+.c-pk{background:var(--pk-l);color:var(--pk-d);border-color:#FBCFE8}
+.c-t{background:var(--t-l);color:var(--t-d);border-color:#99F6E4}
+.c-or{background:var(--or-l);color:var(--or-d);border-color:#FED7AA}
+.s-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+/* TEXT PANEL */
+.text-panel{background:#fff;border-radius:var(--r-card);padding:24px 26px;box-shadow:var(--sh-lg);margin-bottom:14px;border:1px solid var(--border)}
+.panel-h{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.panel-h::after{content:'';flex:1;height:1px;background:var(--border)}
+.sec-tag{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 11px;border-radius:99px;margin-bottom:12px;border:1px solid}
+
+/* Dialogue */
+.dialogue{margin-bottom:20px}
+.dl-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
+.dl-name{font-size:12px;font-weight:800;min-width:52px;padding-top:6px;flex-shrink:0}
+.nm-a{color:var(--p-d)}.nm-b{color:var(--b-d)}.nm-c{color:var(--t-d)}.nm-d{color:var(--or-d)}.nm-e{color:var(--pk-d)}
+.dl-bub{font-family:'Noto Sans SC','Inter',sans-serif;font-size:15px;color:var(--text);line-height:1.75;background:var(--bg);border-radius:0 10px 10px 10px;padding:8px 14px;flex:1;border:1px solid var(--border)}
+.nm-b~.dl-bub{background:var(--b-l);border-color:#BFDBFE}
+.nm-c~.dl-bub{background:var(--t-l);border-color:#99F6E4}
+.nm-d~.dl-bub{background:var(--or-l);border-color:#FED7AA}
+.nm-e~.dl-bub{background:var(--p-l);border-color:#DDD6FE}
+
+/* Prose */
+.prose{font-family:'Noto Sans SC','Inter',sans-serif;font-size:15.5px;color:var(--text);line-height:2;background:var(--bg);border-radius:var(--r-sm);padding:16px 20px;border-left:4px solid var(--p);margin-bottom:16px}
+.prose p{margin-bottom:.7em}.prose p:last-child{margin-bottom:0}
+.hl{background:#FEF9C3;border-radius:3px;padding:0 2px}
+.hl-p{color:var(--p-d);font-weight:700}
+.hl-g{color:var(--g-d);font-weight:700}
+
+/* VOCAB */
+.sec-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:10px}
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:10px;margin-bottom:18px}
+.vc{background:#fff;border-radius:var(--r-sm);border:1.5px solid var(--border);padding:12px 14px;box-shadow:var(--sh);transition:all .15s}
+.vc:hover{transform:translateY(-3px);box-shadow:var(--sh-lg);border-color:var(--p)}
+.vc-h{font-family:'Noto Sans SC',sans-serif;font-size:20px;font-weight:700;color:var(--p-d)}
+.vc-p{font-size:11px;color:var(--b-d);font-weight:600;margin:3px 0 2px}
+.vc-v{font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:6px}
+.vc-ex{font-size:11px;color:var(--sub);border-top:1px dashed var(--border);padding-top:6px;line-height:1.6}
+.vc-ex .zh{font-family:'Noto Sans SC',sans-serif;color:var(--p-d)}
+
+/* QUIZ CARD */
+.qcard{background:#fff;border-radius:var(--r-card);box-shadow:var(--sh-lg);overflow:hidden;margin-bottom:14px;border:1px solid var(--border)}
+.qbody{padding:22px 26px;animation:fadeUp .22s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.q-no{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;margin-bottom:5px}
+.q-tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:13px;border:1px solid}
+.qt-mc{background:var(--b-l);color:var(--b-d);border-color:#BFDBFE}
+.qt-tf{background:var(--g-l);color:var(--g-d);border-color:#A7F3D0}
+.qt-fill{background:var(--a-l);color:var(--a-d);border-color:#FDE68A}
+.qt-match{background:var(--p-l);color:var(--p-d);border-color:#DDD6FE}
+.qt-zh2vi{background:var(--pk-l);color:var(--pk-d);border-color:#FBCFE8}
+.qt-vi2zh{background:var(--t-l);color:var(--t-d);border-color:#99F6E4}
+.qt-order{background:var(--or-l);color:var(--or-d);border-color:#FED7AA}
+.qt-grammar{background:var(--p-l);color:var(--p-d);border-color:#DDD6FE}
+.q-txt{font-size:15.5px;font-weight:600;color:var(--text);line-height:1.75;margin-bottom:16px}
+.q-txt .zh{font-family:'Noto Sans SC',sans-serif;font-size:17px;color:var(--p-d);font-weight:700}
+.q-txt .blank{border-bottom:2.5px dashed var(--a-d);padding-bottom:1px;color:var(--a-d);font-family:'Noto Sans SC',sans-serif;font-size:17px}
+.grammar-note{background:linear-gradient(135deg,var(--p-l),var(--b-l));border-radius:var(--r-sm);padding:13px 17px;margin-bottom:14px;border-left:4px solid var(--p);font-size:13px;line-height:1.7;color:var(--p-d)}
+.grammar-note .pat{font-family:'Noto Sans SC',sans-serif;font-size:15px;font-weight:700;color:var(--b-d);display:block;margin-bottom:5px}
+
+/* MC */
+.mc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:500px){.mc-grid{grid-template-columns:1fr}}
+.mc-btn{padding:11px 14px;border-radius:var(--r-sm);border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:13.5px;font-weight:600;color:var(--text);text-align:left;transition:all .13s;font-family:'Inter','Noto Sans SC',sans-serif;line-height:1.45}
+.mc-btn:hover:not(.locked){border-color:var(--p);background:var(--p-l);color:var(--p-d)}
+.mc-btn.sel{border-color:var(--p);background:var(--p-l);color:var(--p-d)}
+.mc-btn.ok{border-color:var(--g);background:var(--g-l);color:var(--g-d)}
+.mc-btn.bad{border-color:var(--r);background:var(--r-l);color:var(--r-d)}
+.mc-btn.locked{cursor:default}
+
+/* T/F */
+.tf-row{display:flex;gap:10px}
+.tf-btn{flex:1;padding:13px;border-radius:var(--r-sm);border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:15px;font-weight:700;text-align:center;transition:all .13s}
+.tf-btn:hover:not(.locked){border-color:var(--p);background:var(--p-l)}
+.tf-btn.sel{border-color:var(--p);background:var(--p-l);color:var(--p-d)}
+.tf-btn.ok{border-color:var(--g);background:var(--g-l);color:var(--g-d)}
+.tf-btn.bad{border-color:var(--r);background:var(--r-l);color:var(--r-d)}
+.tf-btn.locked{cursor:default}
+
+/* Fill */
+.fill-in{width:100%;border:1.5px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;font-size:16px;font-family:'Noto Sans SC','Inter',sans-serif;color:var(--text);background:var(--bg);outline:none;transition:border .13s}
+.fill-in:focus{border-color:var(--p);background:#fff;box-shadow:0 0 0 3px #DDD6FE50}
+.fill-in.ok{border-color:var(--g);background:var(--g-l)}
+.fill-in.bad{border-color:var(--r);background:var(--r-l)}
+.fill-hint{font-size:11px;color:var(--muted);margin-top:5px}
+
+/* Match */
+.match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.match-col-h{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:7px}
+.match-it{padding:9px 12px;border-radius:var(--r-sm);border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:13px;font-weight:600;margin-bottom:7px;transition:all .13s;font-family:'Inter','Noto Sans SC',sans-serif;line-height:1.45}
+.match-it:hover:not(.locked):not(.done){border-color:var(--p);background:var(--p-l)}
+.match-it.active{border-color:var(--a);background:var(--a-l);color:var(--a-d)}
+.match-it.done{border-color:var(--g);background:var(--g-l);color:var(--g-d);opacity:.72}
+.match-it.err{border-color:var(--r);background:var(--r-l)}
+
+/* Trans */
+.trans-in{width:100%;border:1.5px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;font-size:15px;font-family:'Noto Sans SC','Inter',sans-serif;color:var(--text);background:var(--bg);outline:none;transition:border .13s;min-height:72px;resize:vertical;line-height:1.65}
+.trans-in:focus{border-color:var(--p);background:#fff;box-shadow:0 0 0 3px #DDD6FE50}
+.trans-in.ok{border-color:var(--g);background:var(--g-l)}
+.trans-in.bad{border-color:var(--r);background:var(--r-l)}
+
+/* Order */
+.order-list{display:flex;flex-direction:column;gap:7px}
+.order-it{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:var(--r-sm);border:1.5px solid var(--border);background:var(--bg);cursor:grab;font-size:14px;font-weight:600;font-family:'Noto Sans SC','Inter',sans-serif;transition:border .13s;user-select:none;line-height:1.5}
+.order-it:hover{border-color:var(--p);background:var(--p-l)}
+.order-it.dragging{opacity:.35;border-style:dashed}
+.order-num{background:var(--p-l);color:var(--p-d);font-size:11px;font-weight:800;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid #DDD6FE}
+.drag-hint{font-size:11px;color:var(--muted);margin-top:6px}
+
+/* Feedback */
+.fb{margin-top:11px;font-size:13px;font-weight:600;display:none;align-items:flex-start;gap:5px;line-height:1.65}
+.fb.ok{display:flex;color:var(--g-d)}
+.fb.bad{display:flex;color:var(--r-d)}
+
+/* Nav */
+.qnav{display:flex;justify-content:space-between;align-items:center;padding:13px 24px;border-top:1.5px solid var(--border);background:var(--bg);gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:9px 20px;border-radius:99px;border:none;font-size:13.5px;font-weight:700;cursor:pointer;transition:all .14s;font-family:'Inter',sans-serif}
+.btn-primary{background:linear-gradient(135deg,var(--p),var(--pk));color:#fff;box-shadow:0 2px 8px rgba(124,58,237,.28)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(124,58,237,.38)}
+.btn-ghost{background:#fff;border:1.5px solid var(--border2);color:var(--sub)}
+.btn-ghost:hover{border-color:var(--p);color:var(--p-d)}
+.btn-green{background:linear-gradient(135deg,var(--g),var(--t));color:#fff;box-shadow:0 2px 8px rgba(5,150,105,.28)}
+.btn-green:hover{transform:translateY(-1px)}
+.btn-red{background:linear-gradient(135deg,var(--r),var(--pk));color:#fff;box-shadow:0 2px 8px rgba(220,38,38,.28)}
+.btn-red:hover{transform:translateY(-1px)}
+.btn:disabled{opacity:.38;cursor:not-allowed;transform:none!important}
+
+/* Result */
+.res-card{background:#fff;border-radius:var(--r-card);padding:32px 26px;box-shadow:var(--sh-lg);text-align:center;border:1px solid var(--border)}
+.res-emo{font-size:56px;margin-bottom:11px}
+.res-score{font-size:54px;font-weight:900;color:var(--p-d);line-height:1}
+.res-lbl{font-size:15px;color:var(--sub);margin-top:6px;margin-bottom:22px}
+.res-stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.stat{background:var(--bg);border-radius:var(--r-sm);padding:13px 18px;min-width:98px;border:1px solid var(--border)}
+.stat .v{font-size:24px;font-weight:900}
+.stat .l{font-size:11px;color:var(--muted);margin-top:2px;font-weight:600}
+.s-ok .v{color:var(--g)}.s-bad .v{color:var(--r)}.s-t .v{color:var(--p)}
+.breakdown{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:22px}
+.bk-it{font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px;border:1px solid var(--border);background:var(--bg)}
+.rev-list{text-align:left;margin-top:20px}
+.rev-it{background:var(--bg);border-radius:var(--r-sm);padding:12px 15px;margin-bottom:8px;border-left:4px solid transparent}
+.rev-it.ri-ok{border-color:var(--g)}.rev-it.ri-bad{border-color:var(--r)}
+.rev-q{font-size:12px;color:var(--muted);margin-bottom:3px}
+.rev-ans{font-size:13px;font-weight:600;line-height:1.55}
+.ok-chip{display:inline-flex;align-items:center;gap:2px;background:var(--g-l);color:var(--g-d);font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;border:1px solid #A7F3D0}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- TOPBAR -->
+<div class="topbar" id="topbar" style="display:none">
+  <div class="tb-left">
+    <h1>🎭 Ôn Tập Bài Khóa Bài 13 <span class="badge">HSK 4</span></h1>
+    <p id="top-sub">Kinh kịch · Đũa · Trà · 20 câu hỏi ngẫu nhiên</p>
+  </div>
+  <div class="timer-box" id="timer-box">
+    <span>⏱</span><span class="timer-val" id="tval">15:00</span>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="prog-bar" id="prog-bar" style="display:none">
+  <div class="prog-top"><span id="prog-lbl">Câu 1 / 20</span><span id="prog-pct">0%</span></div>
+  <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+</div>
+
+<!-- START -->
+<div id="s-start" class="on">
+  <div class="start-card">
+    <span class="s-emo">🎭🥢🍵🌏</span>
+    <div class="s-h">Phiếu Ôn Tập Bài 13 – HSK 4</div>
+    <div class="s-sub">
+      <b>Kinh kịch · Đũa · Trà – Văn hóa Trung Hoa</b><br>
+      Hội thoại Tiểu Vũ – Tiểu Hạ · Tiểu Vũ – Marco · Thầy Lý – Hiệu trưởng<br>
+      Bài đọc về đũa &amp; trà · 7 dạng bài tập · 15 phút
+    </div>
+    <div class="s-chips">
+      <span class="chip c-b">📋 Trắc nghiệm</span>
+      <span class="chip c-g">✅ Đúng / Sai</span>
+      <span class="chip c-a">✏️ Điền chỗ trống</span>
+      <span class="chip c-p">🔗 Nối từ</span>
+      <span class="chip c-pk">🔄 Dịch Trung→Việt</span>
+      <span class="chip c-t">🔄 Dịch Việt→Trung</span>
+      <span class="chip c-or">🔀 Sắp xếp câu</span>
+      <span class="chip c-p">📐 Ngữ pháp</span>
+    </div>
+    <div class="s-btns">
+      <button class="btn btn-ghost" onclick="showText()">📖 Đọc bài khóa</button>
+      <button class="btn btn-ghost" onclick="showVocab()">📋 Từ vựng</button>
+      <button class="btn btn-red" onclick="startQuiz()">🚀 Bắt đầu kiểm tra!</button>
+    </div>
+  </div>
+</div>
+
+<!-- TEXT -->
+<div id="s-text">
+  <div class="text-panel">
+    <div class="panel-h">📜 Bài Khóa Bài 13 – HSK 4</div>
+
+    <!-- Dialogue 1 -->
+    <span class="sec-tag c-p">🎭 Hội thoại 1 — Tiểu Vũ &amp; Tiểu Hạ (Kinh kịch)</span>
+    <div class="dialogue">
+      <div class="dl-row"><span class="dl-name nm-a">小雨:</span><div class="dl-bub">小夏，你爷爷京剧唱得真<span class="hl-p">专业</span>，我还以为他是<span class="hl-p">京剧演员</span>呢。</div></div>
+      <div class="dl-row"><span class="dl-name nm-b">小夏:</span><div class="dl-bub">对啊，他本来就是京剧演员，年轻时在我们那儿很有名，<span class="hl">深受观众们的喜爱</span>。</div></div>
+      <div class="dl-row"><span class="dl-name nm-a">小雨:</span><div class="dl-bub">你爷爷一定对京剧有着很深厚的<span class="hl-p">感情</span>。</div></div>
+      <div class="dl-row"><span class="dl-name nm-b">小夏:</span><div class="dl-bub">是啊，他8岁就开始<span class="hl-p">上台演出</span>，到现在大概唱了60多年了，他对这门<span class="hl-p">艺术</span>的喜爱从来没有改变过。</div></div>
+      <div class="dl-row"><span class="dl-name nm-a">小雨:</span><div class="dl-bub">这么说你喜欢听京剧也是受了你爷爷的<span class="hl-p">影响</span>？</div></div>
+      <div class="dl-row"><span class="dl-name nm-b">小夏:</span><div class="dl-bub">我小时候经常去看他的演出。平时他还给我讲很多京剧里的历史故事，让我学到了很多<span class="hl-p">知识</span>。</div></div>
+    </div>
+
+    <!-- Dialogue 2 -->
+    <span class="sec-tag c-b">🌏 Hội thoại 2 — Tiểu Vũ &amp; Marco (Lưu học sinh Mỹ)</span>
+    <div class="dialogue">
+      <div class="dl-row"><span class="dl-name nm-a">小雨:</span><div class="dl-bub">真没想到你一个来自美国的<span class="hl-p">外国留学生</span>，能把京剧唱得这么好。</div></div>
+      <div class="dl-row"><span class="dl-name nm-c">马克:</span><div class="dl-bub">我常常跟着电视<span class="hl">学唱</span>京剧，然后一遍一遍地练习，<span class="hl-p">偶尔</span>跟中国人一起唱上几句。</div></div>
+      <div class="dl-row"><span class="dl-name nm-a">小雨:</span><div class="dl-bub">难道你从来没有接受过京剧方面的<span class="hl-p">专门教育</span>吗？</div></div>
+      <div class="dl-row"><span class="dl-name nm-c">马克:</span><div class="dl-bub">别吃惊，因为我以前学习过<span class="hl-p">音乐</span>，有一些音乐<span class="hl-p">基础</span>，又对京剧这种<span class="hl-p">表演艺术</span>非常感兴趣，所以能比较容易地学会它的<span class="hl-p">唱法</span>。</div></div>
+      <div class="dl-row"><span class="dl-name nm-a">小雨:</span><div class="dl-bub">你真厉害！<span class="hl">竟然</span>连很多中国人都听不懂的京剧也能学会。我还是比较喜欢听<span class="hl-p">流行音乐</span>。</div></div>
+      <div class="dl-row"><span class="dl-name nm-c">马克:</span><div class="dl-bub">那是你不了解京剧的唱法。在音乐方面，京剧给了我很多新的<span class="hl-p">想法</span>。我还把京剧的一些<span class="hl-p">特点</span>增加到了自己的音乐中，达到了很好的<span class="hl-p">效果</span>。</div></div>
+    </div>
+
+    <!-- Dialogue 3 -->
+    <span class="sec-tag c-t">🏫 Hội thoại 3 — Thầy Lý &amp; Hiệu trưởng (Lễ hội văn hóa)</span>
+    <div class="dialogue">
+      <div class="dl-row"><span class="dl-name nm-d">李老师:</span><div class="dl-bub">校长，因为外国留学生不了解中国<span class="hl-p">文化</span>，有时候会影响他们和中国人之间的<span class="hl-p">正常交流</span>，甚至还可能引起<span class="hl-p">误会</span>，带来麻烦，所以我们想<span class="hl-p">申请</span>举办一次中国<span class="hl-p">传统文化节</span>活动。</div></div>
+      <div class="dl-row"><span class="dl-name nm-e">校长:</span><div class="dl-bub">你们的想法很好，举办文化节活动，<span class="hl">一方面</span>能让各国学生更好地了解中国，<span class="hl">另一方面</span>也能为学生们提供互相交流和学习的机会。</div></div>
+      <div class="dl-row"><span class="dl-name nm-d">李老师:</span><div class="dl-bub">谢谢您的支持！</div></div>
+      <div class="dl-row"><span class="dl-name nm-e">校长:</span><div class="dl-bub">上次的<span class="hl-p">春游</span>活动你们办得非常有趣，这次活动继续由你负责，相信也一定会很成功。</div></div>
+      <div class="dl-row"><span class="dl-name nm-d">李老师:</span><div class="dl-bub">我们回去就开会<span class="hl-p">讨论</span>，星期五之前把详细的<span class="hl-p">计划书</span>发给您。</div></div>
+    </div>
+
+    <!-- Reading 1 -->
+    <span class="sec-tag c-a">🥢 Bài đọc 1 — Đũa (筷子)</span>
+    <div class="prose">
+      <p><span class="hl-p">筷子</span>在中国大约有<span class="hl">3000多年</span>的历史了。对外国人来说，使用筷子吃饭并不容易，所以，国外的一些中国<span class="hl-p">餐厅</span>在放筷子的纸袋上会提供使用筷子的详细<span class="hl-p">说明</span>。</p>
+      <p>不过，如果你认为每个中国人都会正确使用筷子，那就错了。有人在<span class="hl-p">互联网</span>上专门进行过<span class="hl-p">调查</span>，结果发现每六个中国人中就有一个使用筷子的方法是<span class="hl">错误</span>的。如果你想正确使用筷子，那就好好练习吧。</p>
+    </div>
+
+    <!-- Reading 2 -->
+    <span class="sec-tag c-g">🍵 Bài đọc 2 — Trà (茶)</span>
+    <div class="prose">
+      <p><span class="hl-p">茶</span>在中国有几千年的历史，是中国最常见的<span class="hl-p">饮料</span>。最早的时候茶只是被当做一种<span class="hl-p">药</span>，而不是饮料。后来，随着人们对茶的<span class="hl-p">认识</span>的加深，慢慢开始把它当做<span class="hl-p">解渴</span>的饮料，这才慢慢有了中国的<span class="hl-p">茶文化</span>。</p>
+      <p>在中国，喝茶是一种十分<span class="hl-p">普遍</span>的生活习惯。对很多中国人来说，喝茶已成为他们生活中<span class="hl">不可缺少</span>的一部分。但是有的饮料虽然名字叫"茶"，却并不是真正的茶。比如广东省的人爱喝的"<span class="hl-p">凉茶</span>"，它的味道稍微有点儿苦，其实是一种用中药做成的饮料。</p>
+    </div>
+  </div>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px">
+    <button class="btn btn-ghost" onclick="showVocab()">📋 Từ vựng</button>
+    <button class="btn btn-red" onclick="startQuiz()">🚀 Kiểm tra ngay!</button>
+  </div>
+</div>
+
+<!-- VOCAB -->
+<div id="s-vocab">
+  <div class="sec-lbl">📋 Từ vựng chính Bài 13 HSK 4</div>
+  <div class="vocab-grid" id="vocab-grid"></div>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px">
+    <button class="btn btn-ghost" onclick="showText()">📖 Đọc lại bài</button>
+    <button class="btn btn-red" onclick="startQuiz()">🚀 Bắt đầu kiểm tra!</button>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="s-quiz">
+  <div class="qcard">
+    <div class="qbody" id="qbody"></div>
+    <div class="qnav">
+      <button class="btn btn-ghost" id="btn-prev" onclick="goQ(-1)" disabled="">← Trước</button>
+      <button class="btn btn-primary" id="btn-next" onclick="goQ(1)">Tiếp →</button>
+      <button class="btn btn-green" id="btn-sub" style="display:none" onclick="submitAll()">🏁 Nộp bài</button>
+    </div>
+  </div>
+</div>
+
+<!-- RESULT -->
+<div id="s-result">
+  <div class="res-card" id="res-card"></div>
+</div>
+
+</div>
+<script>
+/* ════════════════════ WORDS ════════════════════ */
+const WORDS=[
+  {h:"专业",p:"zhuānyè",v:"Chuyên nghiệp / chuyên ngành",ex:"他唱京剧唱得很专业。",exv:"Anh ấy hát kinh kịch rất chuyên nghiệp."},
+  {h:"演员",p:"yǎnyuán",v:"Diễn viên",ex:"她是一位有名的演员。",exv:"Cô ấy là một diễn viên nổi tiếng."},
+  {h:"感情",p:"gǎnqíng",v:"Tình cảm / cảm xúc",ex:"他对京剧有深厚的感情。",exv:"Anh ấy có tình cảm sâu sắc với kinh kịch."},
+  {h:"艺术",p:"yìshù",v:"Nghệ thuật",ex:"京剧是中国传统艺术。",exv:"Kinh kịch là nghệ thuật truyền thống Trung Quốc."},
+  {h:"影响",p:"yǐngxiǎng",v:"Ảnh hưởng",ex:"父母对孩子的影响很大。",exv:"Cha mẹ ảnh hưởng rất lớn đến con cái."},
+  {h:"偶尔",p:"ǒu'ěr",v:"Thỉnh thoảng / đôi khi",ex:"我偶尔去看电影。",exv:"Thỉnh thoảng tôi đi xem phim."},
+  {h:"基础",p:"jīchǔ",v:"Cơ sở / nền tảng",ex:"他有很好的音乐基础。",exv:"Anh ấy có nền tảng âm nhạc rất tốt."},
+  {h:"竟然",p:"jìngrán",v:"Không ngờ / bất ngờ thay",ex:"他竟然会说五种语言。",exv:"Không ngờ anh ấy biết nói năm thứ tiếng."},
+  {h:"效果",p:"xiàoguǒ",v:"Hiệu quả / kết quả",ex:"这个方法的效果很好。",exv:"Phương pháp này có hiệu quả rất tốt."},
+  {h:"误会",p:"wùhuì",v:"Hiểu lầm",ex:"我们之间产生了误会。",exv:"Giữa chúng tôi đã xảy ra hiểu lầm."},
+  {h:"申请",p:"shēnqǐng",v:"Xin / đăng ký / đề nghị",ex:"我申请参加这次活动。",exv:"Tôi đăng ký tham gia hoạt động này."},
+  {h:"传统",p:"chuántǒng",v:"Truyền thống",ex:"春节是中国的传统节日。",exv:"Tết Nguyên Đán là ngày lễ truyền thống của Trung Quốc."},
+  {h:"一方面",p:"yī fāngmiàn",v:"Một mặt / về một phương diện",ex:"一方面要学习，另一方面要休息。",exv:"Một mặt phải học, mặt khác phải nghỉ ngơi."},
+  {h:"筷子",p:"kuàizi",v:"Đũa",ex:"你会用筷子吗？",exv:"Bạn có biết dùng đũa không?"},
+  {h:"调查",p:"diàochá",v:"Điều tra / khảo sát",ex:"有人在网上进行了调查。",exv:"Có người đã thực hiện khảo sát trên mạng."},
+  {h:"普遍",p:"pǔbiàn",v:"Phổ biến / thông thường",ex:"喝茶在中国是很普遍的习惯。",exv:"Uống trà là thói quen rất phổ biến ở Trung Quốc."},
+  {h:"解渴",p:"jiěkě",v:"Giải khát",ex:"天热的时候喝茶可以解渴。",exv:"Trời nóng uống trà có thể giải khát."},
+  {h:"不可缺少",p:"bùkě quēshǎo",v:"Không thể thiếu",ex:"水是生活中不可缺少的东西。",exv:"Nước là thứ không thể thiếu trong cuộc sống."},
+  {h:"凉茶",p:"liángchá",v:"Lương trà (đồ uống thảo dược)",ex:"广东人很喜欢喝凉茶。",exv:"Người Quảng Đông rất thích uống lương trà."},
+  {h:"深受",p:"shēn shòu",v:"Được... rất nhiều (nhận sâu sắc)",ex:"他深受观众喜爱。",exv:"Anh ấy được khán giả rất yêu thích."},
+];
+
+/* ════════════════════ QUESTIONS ════════════════════ */
+const FIXED=[
+  // ── T/F (8) ──
+  {type:'tf',qhtml:'小夏的爷爷是一位专业京剧演员，年轻时很有名。',
+   ans:true,expl:'Đúng – "他本来就是京剧演员，年轻时在我们那儿很有名"。'},
+  {type:'tf',qhtml:'小夏的爷爷从15岁开始上台演出。',
+   ans:false,expl:'Sai – ông của Tiểu Hạ bắt đầu biểu diễn từ năm 8 tuổi（8岁就开始上台演出）。'},
+  {type:'tf',qhtml:'马克曾经在中国专门学习过京剧。',
+   ans:false,expl:'Sai – Marco chưa từng được học kinh kịch chuyên nghiệp: "难道你从来没有接受过京剧方面的专门教育吗？"'},
+  {type:'tf',qhtml:'马克学会京剧是因为他以前学过音乐，有音乐基础。',
+   ans:true,expl:'Đúng – "因为我以前学习过音乐，有一些音乐基础…所以能比较容易地学会它的唱法"。'},
+  {type:'tf',qhtml:'李老师申请举办文化节，是为了让外国留学生了解中国文化，减少误会。',
+   ans:true,expl:'Đúng – "外国留学生不了解中国文化，有时候会…引起误会，带来麻烦，所以我们想申请举办…文化节"。'},
+  {type:'tf',qhtml:'调查发现，每三个中国人中就有一个使用筷子的方法是错误的。',
+   ans:false,expl:'Sai – "每六个中国人中就有一个使用筷子的方法是错误的"（1/6, không phải 1/3）。'},
+  {type:'tf',qhtml:'茶在中国最初是被当做饮料来使用的。',
+   ans:false,expl:'Sai – "最早的时候茶只是被当做一种药，而不是饮料"。'},
+  {type:'tf',qhtml:'广东的凉茶是用中药做成的饮料，味道稍微有点儿苦。',
+   ans:true,expl:'Đúng – "它的味道稍微有点儿苦，其实是一种用中药做成的饮料"。'},
+
+  // ── MC (5) ──
+  {type:'mc',qhtml:'小夏喜欢听京剧的原因是什么？',
+   opts:['他在学校里学过京剧','从小受爷爷影响，常去看演出并听历史故事','他觉得京剧比流行音乐好听','他的老师要求他学京剧'],
+   ans:'从小受爷爷影响，常去看演出并听历史故事',
+   expl:'"这么说你喜欢听京剧也是受了你爷爷的影响？…我小时候经常去看他的演出…"'},
+  {type:'mc',qhtml:'马克把京剧的特点加入自己的音乐中，达到了什么效果？',
+   opts:['让他的音乐变得更难听','让他认识了更多中国朋友','达到了很好的效果','让他获得了音乐奖'],
+   ans:'达到了很好的效果',
+   expl:'"我还把京剧的一些特点增加到了自己的音乐中，达到了很好的效果"。'},
+  {type:'mc',qhtml:'举办文化节，校长认为有哪两个好处？',
+   opts:['让学生多放假、多玩儿','让各国学生更了解中国，并提供互相交流的机会','增加学校收入、减少留学生','让老师们有更多工作'],
+   ans:'让各国学生更了解中国，并提供互相交流的机会',
+   expl:'"一方面能让各国学生更好地了解中国，另一方面也能为学生们提供互相交流和学习的机会"。'},
+  {type:'mc',qhtml:'根据调查，使用筷子方法错误的中国人占多大比例？',
+   opts:['1/3（三分之一）','1/4（四分之一）','1/5（五分之一）','1/6（六分之一）'],
+   ans:'1/6（六分之一）',
+   expl:'"每六个中国人中就有一个使用筷子的方法是错误的"。'},
+  {type:'mc',qhtml:'茶文化是怎样在中国形成的？',
+   opts:['从一开始就被当做饮料','从皇帝命令百姓喝茶开始','先是药，后来随着认识加深才成为解渴的饮料','是从外国传入中国的'],
+   ans:'先是药，后来随着认识加深才成为解渴的饮料',
+   expl:'"最早的时候茶只是被当做一种药…随着人们对茶的认识的加深，慢慢开始把它当做解渴的饮料"。'},
+
+  // ── GRAMMAR (3) ──
+  {type:'grammar',
+   note:'<span class="pat">一方面…另一方面… (một mặt… mặt khác…)</span>Dùng để trình bày hai khía cạnh của một vấn đề.',
+   qhtml:'选择正确使用"一方面…另一方面…"的句子：',
+   opts:['一方面能了解中国，另一方面也能互相交流。','一方面另一方面都很好。','另一方面了解中国，一方面互相交流。','一方面，了解很重要。'],
+   ans:'一方面能了解中国，另一方面也能互相交流。',
+   expl:'Cấu trúc chuẩn: 一方面 + [nội dung 1]，另一方面 + [nội dung 2].'},
+  {type:'grammar',
+   note:'<span class="pat">竟然 (thật không ngờ / bất ngờ thay)</span>Diễn đạt sự ngạc nhiên về điều không mong đợi, thường có sắc thái kinh ngạc.',
+   qhtml:'下面哪个句子正确使用了"竟然"？',
+   opts:['他竟然每天去上课，很认真。','连很多中国人都听不懂的京剧，他竟然学会了！','他竟然喜欢吃苹果。','她竟然是老师。'],
+   ans:'连很多中国人都听不懂的京剧，他竟然学会了！',
+   expl:'"竟然" dùng khi điều xảy ra ngoài mong đợi, gây ngạc nhiên. Kết hợp với "连…也/都" càng tăng sắc thái bất ngờ.'},
+  {type:'grammar',
+   note:'<span class="pat">虽然…却… (tuy… nhưng… / mặc dù… nhưng lại…)</span>"却" thay cho "但是" khi muốn nhấn mạnh sự tương phản mạnh hơn.',
+   qhtml:'选择正确使用"虽然…却…"的句子：',
+   opts:['虽然名字叫"茶"，却并不是真正的茶。','虽然名字叫茶，但是却是茶。','虽然是茶，却叫别的名字但是。','虽然，却是真正的茶。'],
+   ans:'虽然名字叫"茶"，却并不是真正的茶。',
+   expl:'课文原句："有的饮料虽然名字叫'茶'，却并不是真正的茶"。"却" diễn đạt sự tương phản bất ngờ.'},
+
+  // ── FILL (3) ──
+  {type:'fill',
+   qhtml:'根据课文填空：<br><span class="zh">他对这门艺术的喜爱从来没有<span class="blank">______</span>过。</span>',
+   ans:'改变',hint:'Pinyin: gǎibiàn — nghĩa: thay đổi',
+   expl:'改变（gǎibiàn）= thay đổi. Ông của Tiểu Hạ chưa bao giờ thay đổi tình yêu với kinh kịch.'},
+  {type:'fill',
+   qhtml:'根据课文填空：<br><span class="zh">喝茶已成为很多中国人生活中不可<span class="blank">______</span>的一部分。</span>',
+   ans:'缺少',hint:'Pinyin: quēshǎo — nghĩa: thiếu',
+   expl:'不可缺少（bùkě quēshǎo）= không thể thiếu.'},
+  {type:'fill',
+   qhtml:'根据课文填空：<br><span class="zh">我还把京剧的一些<span class="blank">______</span>增加到了自己的音乐中。</span>',
+   ans:'特点',hint:'Pinyin: tèdiǎn — nghĩa: đặc điểm',
+   expl:'特点（tèdiǎn）= đặc điểm. Marco thêm các đặc điểm của kinh kịch vào âm nhạc của mình.'},
+
+  // ── ORDER (2) ──
+  {type:'order',
+   qhtml:'将下列词语排列成正确的句子：',
+   parts:['我常常','跟着电视','学唱京剧'],
+   answer:'我常常跟着电视学唱京剧',
+   expl:'正确顺序：我常常 / 跟着电视 / 学唱京剧。'},
+  {type:'order',
+   qhtml:'将下列词语排列成正确的句子：',
+   parts:['星期五之前','把详细的计划书','发给您'],
+   answer:'星期五之前把详细的计划书发给您',
+   expl:'正确顺序：星期五之前 / 把详细的计划书 / 发给您（把字句）。'},
+
+  // ── ZH2VI (2) ──
+  {type:'zh2vi',
+   qhtml:'将下面的句子译成越南语：<br><span class="zh">"在音乐方面，京剧给了我很多新的想法，我还把京剧的一些特点增加到了自己的音乐中，达到了很好的效果。"</span>',
+   ans:'Về phương diện âm nhạc, kinh kịch đã cho tôi nhiều ý tưởng mới, tôi còn thêm một số đặc điểm của kinh kịch vào âm nhạc của mình và đạt được hiệu quả rất tốt.',
+   expl:'效果（xiàoguǒ）= hiệu quả; 特点（tèdiǎn）= đặc điểm; 想法（xiǎngfǎ）= ý tưởng.'},
+  {type:'zh2vi',
+   qhtml:'将下面的句子译成越南语：<br><span class="zh">"筷子在中国大约有3000多年的历史了，对外国人来说，使用筷子吃饭并不容易。"</span>',
+   ans:'Đũa ở Trung Quốc đã có lịch sử khoảng hơn 3000 năm, đối với người nước ngoài, việc dùng đũa để ăn không hề dễ dàng.',
+   expl:'对…来说 = đối với…; 并不 = không hề, chẳng phải.'},
+
+  // ── VI2ZH (2) ──
+  {type:'vi2zh',
+   qhtml:'将下面的句子译成汉语：<br><b>"Ban đầu trà chỉ được dùng như một loại thuốc, chứ không phải là đồ uống."</b>',
+   ans:'最早的时候茶只是被当做一种药，而不是饮料。',
+   expl:'被当做 = được coi là / được dùng như; 而不是 = chứ không phải.'},
+  {type:'vi2zh',
+   qhtml:'将下面的句子译成汉语：<br><b>"Uống trà đã trở thành một phần không thể thiếu trong cuộc sống của nhiều người Trung Quốc."</b>',
+   ans:'喝茶已成为很多中国人生活中不可缺少的一部分。',
+   expl:'不可缺少 = không thể thiếu; 已成为 = đã trở thành.'},
+];
+
+/* ════════════════════ STATE ════════════════════ */
+let qs=[],cur=0,userAns=[],timerID=null,secs=900,done=false,dragSrc=null;
+
+/* ════════════════════ VOCAB ════════════════════ */
+function showVocab(){
+  showOnly('s-vocab'); show('topbar'); hide('prog-bar'); hide('timer-box');
+  id('top-sub').textContent='Từ vựng Bài 13 – xem trước khi kiểm tra';
+  id('vocab-grid').innerHTML=WORDS.map(w=>`<div class="vc">
+    <div class="vc-h">${w.h}</div><div class="vc-p">${w.p}</div>
+    <div class="vc-v">${w.v}</div>
+    <div class="vc-ex"><span class="zh">${w.ex}</span><br>${w.exv}</div>
+  </div>`).join('');
+}
+function showText(){
+  showOnly('s-text'); show('topbar'); hide('prog-bar'); hide('timer-box');
+  id('top-sub').textContent='Bài khóa Bài 13 – Kinh kịch · Đũa · Trà';
+}
+
+/* ════════════════════ QUIZ ════════════════════ */
+function startQuiz(){
+  qs=shuf([...FIXED]).slice(0,20);
+  cur=0; userAns=new Array(qs.length).fill(null); done=false; secs=900; dragSrc=null;
+  showOnly('s-quiz'); show('topbar'); show('prog-bar'); show('timer-box');
+  id('top-sub').textContent='20 câu · Bài 13 HSK 4';
+  id('timer-box').classList.remove('urgent');
+  updTimer(); startTimer(); renderQ();
+}
+function startTimer(){
+  clearInterval(timerID);
+  timerID=setInterval(()=>{ secs--; updTimer();
+    if(secs<=120) id('timer-box').classList.add('urgent');
+    if(secs<=0){ clearInterval(timerID); submitAll(); }
+  },1000);
+}
+function updTimer(){ id('tval').textContent=`${String(Math.floor(secs/60)).padStart(2,'0')}:${String(secs%60).padStart(2,'0')}`; }
+function updProg(){
+  const pct=Math.round((cur+1)/qs.length*100);
+  id('prog-lbl').textContent=`Câu ${cur+1} / ${qs.length}`;
+  id('prog-pct').textContent=pct+'%';
+  id('prog-fill').style.width=pct+'%';
+  const last=cur===qs.length-1;
+  id('btn-next').style.display=last?'none':'';
+  id('btn-sub').style.display=last?'':'none';
+  id('btn-prev').disabled=cur===0;
+}
+
+const TL={mc:'📋 Trắc nghiệm',tf:'✅ Đúng / Sai',fill:'✏️ Điền chỗ trống',match:'🔗 Nối từ',zh2vi:'🔄 Dịch Trung → Việt',vi2zh:'🔄 Dịch Việt → Trung',order:'🔀 Sắp xếp câu',grammar:'📐 Ngữ pháp'};
+const TC={mc:'qt-mc',tf:'qt-tf',fill:'qt-fill',match:'qt-match',zh2vi:'qt-zh2vi',vi2zh:'qt-vi2zh',order:'qt-order',grammar:'qt-grammar'};
+
+function renderQ(){
+  updProg();
+  const q=qs[cur];
+  let body='';
+  if(q.type==='mc'||q.type==='grammar') body=bMC(q);
+  else if(q.type==='tf')   body=bTF();
+  else if(q.type==='fill') body=bFill(q);
+  else if(q.type==='match') body=bMatch(q);
+  else if(q.type==='zh2vi'||q.type==='vi2zh') body=bTrans(q);
+  else if(q.type==='order') body=bOrder(q);
+
+  id('qbody').innerHTML=`
+    <div class="q-no">Câu ${cur+1} / ${qs.length}</div>
+    <span class="q-tag ${TC[q.type]}">${TL[q.type]}</span>
+    ${q.note?`<div class="grammar-note">${q.note}</div>`:''}
+    <div class="q-txt">${q.qhtml||''}</div>
+    ${body}
+    <div class="fb" id="fb"></div>`;
+
+  if(q.type==='match') initMatch(q);
+  else if(q.type==='order') {/* rendered */}
+  else restoreA(q);
+}
+
+function bMC(q){ return `<div class="mc-grid">${q.opts.map((o,i)=>`<button class="mc-btn" id="mc${i}" onclick="cMC(${i})">${o}</button>`).join('')}</div>`; }
+function bTF(){ return `<div class="tf-row"><button class="tf-btn" id="tf0" onclick="cTF(true)">✔️ Đúng</button><button class="tf-btn" id="tf1" onclick="cTF(false)">✖️ Sai</button></div>`; }
+function bFill(q){ return `<input class="fill-in" id="fill" placeholder="输入汉字…" oninput="sFill()"><div class="fill-hint">${q.hint||''}</div>`; }
+function bMatch(q){
+  if(!q._right){ q._right=shuf([...q.words]); q._matched=Array(q.words.length).fill(false); q._sel=null; q._pairs=[]; }
+  const l=q.words.map((w,i)=>`<div class="match-it" id="ml${i}" onclick="cML(${i})"><span style="font-family:'Noto Sans SC',sans-serif">${w.h}</span><br><small style="color:#94A3B8;font-size:10px">${w.p}</small></div>`).join('');
+  const r=q._right.map((w,i)=>`<div class="match-it" id="mr${i}" onclick="cMR(${i})">${w.v}</div>`).join('');
+  return `<div class="match-wrap"><div><div class="match-col-h">词语</div>${l}</div><div><div class="match-col-h">越南语</div>${r}</div></div>`;
+}
+function bTrans(q){ return `<textarea class="trans-in" id="trans" placeholder="${q.type==='vi2zh'?'输入汉语…':'Nhập tiếng Việt…'}" oninput="sTrans()"></textarea>`; }
+function bOrder(q){
+  if(!q._order) q._order=shuf([...q.parts]);
+  return `<div class="order-list" id="olist">${q._order.map((p,i)=>`<div class="order-it" id="oi${i}" draggable="true" ondragstart="dStart(${i})" ondragover="dOver(event)" ondrop="dDrop(event,${i})"><div class="order-num">${i+1}</div>${p}</div>`).join('')}</div><div class="drag-hint">💡 Kéo thả để sắp xếp thứ tự đúng</div>`;
+}
+function initMatch(q){
+  q._matched.forEach((m,i)=>{ if(m) id('ml'+i)?.classList.add('done'); });
+  q._pairs.forEach(p=>{ id('mr'+p.r)?.classList.add('done'); });
+  if(q._sel!==null) id('ml'+q._sel)?.classList.add('active');
+}
+function restoreA(q){
+  const a=userAns[cur]; if(a===null||a===undefined) return;
+  if(q.type==='mc'||q.type==='grammar') q.opts.forEach((o,i)=>{ if(o===a) id('mc'+i)?.classList.add('sel'); });
+  else if(q.type==='tf'){ if(a===true) id('tf0')?.classList.add('sel'); else id('tf1')?.classList.add('sel'); }
+  else if(q.type==='fill'){ const el=id('fill'); if(el) el.value=a; }
+  else if(q.type==='zh2vi'||q.type==='vi2zh'){ const el=id('trans'); if(el) el.value=a; }
+}
+
+function cMC(i){ if(done)return; document.querySelectorAll('.mc-btn').forEach(b=>b.classList.remove('sel')); id('mc'+i).classList.add('sel'); userAns[cur]=qs[cur].opts[i]; }
+function cTF(v){ if(done)return; id('tf0').classList.toggle('sel',v===true); id('tf1').classList.toggle('sel',v===false); userAns[cur]=v; }
+function sFill(){ const el=id('fill'); if(el) userAns[cur]=el.value.trim(); }
+function sTrans(){ const el=id('trans'); if(el) userAns[cur]=el.value.trim(); }
+function cML(i){
+  if(done)return; const q=qs[cur]; if(q._matched[i])return; q._sel=i;
+  document.querySelectorAll('[id^="ml"]').forEach((el,j)=>{ el.classList.remove('active'); if(j===i&&!q._matched[j]) el.classList.add('active'); });
+}
+function cMR(i){
+  if(done)return; const q=qs[cur]; if(q._sel===null)return;
+  const lw=q.words[q._sel],rw=q._right[i];
+  if(lw.h===rw.h){
+    id('ml'+q._sel).classList.remove('active'); id('ml'+q._sel).classList.add('done');
+    id('mr'+i).classList.add('done');
+    q._matched[q._sel]=true; q._pairs.push({l:q._sel,r:i}); q._sel=null;
+    if(q._pairs.length===q.words.length) userAns[cur]='matched';
+  } else {
+    const li=id('ml'+q._sel),ri=id('mr'+i);
+    li.classList.add('err'); ri.classList.add('err');
+    setTimeout(()=>{ li.classList.remove('err','active'); ri.classList.remove('err'); q._sel=null; },420);
+  }
+}
+function dStart(i){ dragSrc=i; id('oi'+i)?.classList.add('dragging'); }
+function dOver(e){ e.preventDefault(); }
+function dDrop(e,i){
+  e.preventDefault(); if(dragSrc===null||dragSrc===i)return;
+  const q=qs[cur]; [q._order[dragSrc],q._order[i]]=[q._order[i],q._order[dragSrc]];
+  userAns[cur]=q._order.join(''); dragSrc=null;
+  const ol=id('olist');
+  if(ol) ol.innerHTML=q._order.map((p,j)=>`<div class="order-it" id="oi${j}" draggable="true" ondragstart="dStart(${j})" ondragover="dOver(event)" ondrop="dDrop(event,${j})"><div class="order-num">${j+1}</div>${p}</div>`).join('');
+}
+
+function goQ(dir){
+  saveCur(); cur=Math.max(0,Math.min(qs.length-1,cur+dir)); renderQ();
+}
+function saveCur(){
+  const q=qs[cur];
+  if(q.type==='fill'){ const el=id('fill'); if(el) userAns[cur]=el.value.trim(); }
+  if(q.type==='zh2vi'||q.type==='vi2zh'){ const el=id('trans'); if(el) userAns[cur]=el.value.trim(); }
+  if(q.type==='order'&&q._order) userAns[cur]=q._order.join('');
+}
+function submitAll(){ saveCur(); clearInterval(timerID); done=true; showResult(); }
+
+/* ════════════════════ GRADE ════════════════════ */
+function nZh(s){ return (s||'').replace(/[，。！？、""''\s]/g,'').toLowerCase(); }
+function nVi(s){ return (s||'').replace(/[.,!?"\s]/g,'').toLowerCase(); }
+function grade(q,a){
+  if(a===null||a===undefined||a==='') return false;
+  if(q.type==='mc'||q.type==='grammar') return a===q.ans;
+  if(q.type==='tf') return a===q.ans;
+  if(q.type==='fill') return nZh(a)===nZh(q.ans);
+  if(q.type==='match') return a==='matched';
+  if(q.type==='zh2vi') return nVi(a)===nVi(q.ans);
+  if(q.type==='vi2zh') return nZh(a)===nZh(q.ans);
+  if(q.type==='order') return nZh(a)===nZh(q.answer||q.parts.join(''));
+}
+function dAns(q){
+  if(q.type==='tf') return q.ans?'✔️ Đúng':'✖️ Sai';
+  if(q.type==='match') return q.words.map(w=>`${w.h}→${w.v}`).join(' | ');
+  if(q.type==='order') return q.answer||q.parts.join('');
+  return q.ans||'';
+}
+function dUser(q,a){
+  if(!a&&a!==false) return '(chưa trả lời)';
+  if(q.type==='tf') return a===true?'✔️ Đúng':'✖️ Sai';
+  if(q.type==='match') return a==='matched'?'Nối đúng tất cả':'Chưa hoàn thành';
+  return a;
+}
+
+/* ════════════════════ RESULT ════════════════════ */
+function showResult(){
+  showOnly('s-result'); hide('prog-bar'); hide('timer-box');
+  const used=900-secs; let ok=0;
+  qs.forEach((q,i)=>{ if(grade(q,userAns[i])) ok++; });
+  const tot=qs.length,pct=Math.round(ok/tot*100);
+  const tm=`${String(Math.floor(used/60)).padStart(2,'0')}:${String(used%60).padStart(2,'0')}`;
+  const emo=pct>=90?'🏆':pct>=70?'🎉':pct>=50?'👍':'📖';
+  const msg=pct>=90?'Xuất sắc! 优秀！':pct>=70?'Làm tốt lắm! 很好！':pct>=50?'Cố gắng thêm nhé!':'Cần đọc lại bài khóa!';
+
+  const typeTot={},typeOk={};
+  qs.forEach((q,i)=>{ typeTot[q.type]=(typeTot[q.type]||0)+1; if(grade(q,userAns[i])) typeOk[q.type]=(typeOk[q.type]||0)+1; });
+  const bk=Object.keys(typeTot).map(t=>`<span class="bk-it">${TL[t].replace(/📋|✅|✏️|🔗|🔄|🔀|📐/g,'').trim()} ${typeOk[t]||0}/${typeTot[t]}</span>`).join('');
+
+  const rev=qs.map((q,i)=>{
+    const ok2=grade(q,userAns[i]);
+    const your=dUser(q,userAns[i]),cor=dAns(q);
+    const qTxt=(q.qhtml||'').replace(/<[^>]+>/g,'').substring(0,55);
+    return `<div class="rev-it ${ok2?'ri-ok':'ri-bad'}">
+      <div class="rev-q">${i+1}. [${(TL[q.type]||'').replace(/📋|✅|✏️|🔗|🔄|🔀|📐/g,'').trim()}] ${qTxt}…</div>
+      <div class="rev-ans">${ok2
+        ?`<span class="ok-chip">✓ Đúng</span> <span style="color:#059669">${your}</span>`
+        :`<span style="color:#DC2626">✗ Bạn: ${your}</span><br><span style="color:#059669">✓ Đúng: ${cor}</span>${q.expl?`<br><small style="color:#94A3B8">💡 ${q.expl}</small>`:''}`
+      }</div>
+    </div>`;
+  }).join('');
+
+  id('res-card').innerHTML=`
+    <div class="res-emo">${emo}</div>
+    <div class="res-score">${ok}/${tot}</div>
+    <div class="res-lbl">${msg} — Đúng ${pct}%</div>
+    <div class="res-stats">
+      <div class="stat s-ok"><div class="v">${ok}</div><div class="l">Câu đúng</div></div>
+      <div class="stat s-bad"><div class="v">${tot-ok}</div><div class="l">Câu sai</div></div>
+      <div class="stat s-t"><div class="v">${tm}</div><div class="l">Thời gian</div></div>
+    </div>
+    <div class="breakdown">${bk}</div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:22px">
+      <button class="btn btn-red" onclick="startQuiz()">🔄 Làm lại</button>
+      <button class="btn btn-ghost" onclick="showText()">📖 Đọc lại bài</button>
+      <button class="btn btn-ghost" onclick="showVocab()">📋 Từ vựng</button>
+    </div>
+    <div class="rev-list">
+      <div class="sec-lbl" style="margin-bottom:10px">📋 Chi tiết từng câu</div>${rev}
+    </div>`;
+}
+
+/* ════════════════════ UTILS ════════════════════ */
+function id(x){ return document.getElementById(x); }
+function show(x){ const el=id(x); if(el) el.style.display=''; }
+function hide(x){ const el=id(x); if(el) el.style.display='none'; }
+function showOnly(s){ ['s-start','s-text','s-vocab','s-quiz','s-result'].forEach(x=>id(x).classList.remove('on')); id(s).classList.add('on'); show('topbar'); }
+function shuf(a){ const b=[...a]; for(let i=b.length-1;i>0;i--){ const j=~~(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]; } return b; }
+</script>
+
+
+</body></html>
